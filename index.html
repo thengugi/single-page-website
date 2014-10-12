@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       <title>Flat web page</title>
+       <link rel="stylesheet" href="css/style.css"/>
+
+	   <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+       <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+	   <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+	   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>	
+	   <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	   <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+	<!----- JQUERY FOR SLIDING NAVIGATION --->   
+$(document).ready(function() {
+  $('a[href*=#]').each(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname
+    && this.hash.replace(/#/,'') ) {
+      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+       if ($target) {
+         var targetOffset = $target.offset().top;
+
+<!----- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV--->   
+         $(this).click(function() {
+            $("#nav li a").removeClass("active");
+            $(this).addClass('active');
+           $('html, body').animate({scrollTop: targetOffset}, 1000);
+           return false;
+         });
+      }
+    }
+  });
+
+});
+</script>
+
+</head>
+<body>
+ <header>
+ 	<div id="content">
+ 	<div id="logo">
+		<a href="#">Peter Ngugi</a>
+	</div>
+	<nav id="navbar">
+		<li><a href="#Home" title="next section">Home</a></li>
+		<li><a href="#Portfolio" title="next section">Portfolio</a></li>
+		<li><a href="#contact" title="Next section">Contact</a></li>
+	</nav> 	
+	
+	</div>
+ </header><!--our header ends here-->
+
+ <!--now we are going to create our slides here-->
+ <div id="slides">
+ 	<div id="content">
+ 		<div id="Home">
+ 			<!--slide 1 contents goes here-->
+ 		<div id="xmass-tree"></div>
+ 		<div id="snow-flakes1"></div>
+ 		<div id="snow-flakes2"></div>
+ 		<h2>Web</h2>
+ 		<h1>Proffessional</h1>
+ 		<div id="divider"></div>
+ 		<div id="ribbon"></div>
+ 		<h3>App Developer</h3>
+ 		</div>
+ 	</div>
+ </div><!--slide1 ends here-->
+
+ <div id="Portfolio">
+ 	<div id="content">
+ 		
+ 	</div>
+ </div><!--portfolio page ends here-->
+
+ <div id="contact">
+ 	<div id="content">
+ 		
+ 	</div>
+ </div><!--contact page ends here-->
+
+ <div id="footer">
+ 	<div id="content"></div>
+ </div><!--the footer ends here-->
+
+</body>
+</html>
